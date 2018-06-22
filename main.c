@@ -1,6 +1,7 @@
-#include "Personne.h"
+#include "ascenseur.h"
 int main(){
-	personne p = {17,"Bob"};
-	DisplayPersonne(p);
+	ascenseur a ={5};
+	DisplayAscenseur(a);
+	return 0;
 }
 
