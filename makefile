@@ -1,6 +1,6 @@
 CC = gcc #choix du compilateur
-CFLAGS = -Wall #afficher tous les warnings
-LDFLAGS = 
+CFLAGS = -Wall #-I/Bureau/introdep/makefile/makefile/TmpRepo/include #afficher tous les warnings #../ncurses/include si on arrive a le mettre dans la bon fichier
+LDFLAGS = #-L/Bureau/introdep/makefile/makefile/TmpRepo/lib -lncurses
 
 PROG = elevator
 
@@ -11,7 +11,7 @@ all : $(PROG)
 clean : 
 	rm *.o
 $(PROG) : main.o ascenseur.o
-	$(CC) $(LDFLAGS) -o $@ main.o ascenseur.o
+	$(CC) -o $@ main.o ascenseur.o $(LDFLAGS) 
 
 #main.o depend de main.c et ascenseur.h
 main.o : main.c ascenseur.h
@@ -21,3 +21,4 @@ main.o : main.c ascenseur.h
 ascenseur.o : ascenseur.c ascenseur.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
+#export TERM=xterm-color

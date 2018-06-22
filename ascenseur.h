@@ -8,7 +8,7 @@ struct Ascenseur{
 	int nbPersonne;
 	int capacite;
 	int etageActuel;
-	enum status={up=1, down=-1, stopped=0};
+	enum status={up, down, stopped};
 }
 
 void DisplayAscenseur(ascenseur a);
