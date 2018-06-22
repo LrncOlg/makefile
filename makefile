@@ -1,11 +1,15 @@
-CC = gcc
-CFLAGS = -Wall
+CC = gcc #choix du compilateur
+CFLAGS = -Wall #afficher tous les warnings
 LDFLAGS = 
 
 PROG = elevator
 
 all : $(PROG)
 
+#pas de dependances pour un clean
+#on supprime les .o
+clean : 
+	rm *.o
 $(PROG) : main.o ascenseur.o
 	$(CC) $(LDFLAGS) -o $@ main.o ascenseur.o
 
